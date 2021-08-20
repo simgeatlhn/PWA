@@ -6,6 +6,7 @@ const self = this; //self represent the service worker
 // **3 different events
 
 //Install service worker
+//event object represent install
 self.addEventListener("install", (event) => {
     event.waitUntil(
         caches.open(CACHE_NAME)
@@ -30,6 +31,7 @@ self.addEventListener('fetch', (event) => {
 });
 
 //Activate the service worker
+//event object represent activate
 self.addEventListener('activate', (event) => {
     const cacheWhitelist = [];
     cacheWhitelist.push(CACHE_NAME);
